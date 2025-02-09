@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="service.css" />
+    <title>Osdito Services</title>
+    <style>
+      :root {
+        --primary-color: #0eb656;
+        --secondary-color: #1582c4;
+        --text-color: #333333;
+        --background-color: #f4f9e8;
+        --contrast-color: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.7;
+      }
+      nav {
+        background-color: var(--contrast-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4.5rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      nav img {
+        max-height: 60px;
+      }
+      nav .desktop-menu {
+        display: flex;
+        align-items: center;
+      }
+      nav .desktop-menu a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      nav .desktop-menu a:hover {
+        color: var(--secondary-color);
+      }
+
+      /* Mobile Dropdown Styles */
+      nav .mobile-menu-toggle {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      nav .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+      nav .mobile-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--contrast-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      nav .mobile-dropdown a {
+        display: block;
+        padding: 1rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-top: 1px solid #f1f1f1;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 768px) {
+        nav .desktop-menu {
+          display: none;
+        }
+        nav .mobile-menu-toggle {
+          display: flex;
+        }
+        nav .mobile-dropdown {
+          display: block;
+          transform: scaleY(0);
+          transform-origin: top;
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        nav .mobile-dropdown.active {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+      footer {
+        background: var(--text-color);
+        color: var(--contrast-color);
+        padding: 3rem 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      footer a,
+      footer p {
+        color: var(--contrast-color);
+        text-decoration: none;
+        margin: 0.5rem 0;
+        display: block;
+        transition: color 0.3s ease;
+      }
+      footer a:hover {
+        color: var(--primary-color);
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .social-icons a {
+        display: inline-block;
+        color: var(--contrast-color);
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: var(--primary-color);
+      }
+      .copyright-section {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+      }
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .social-icons {
+          justify-content: center;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo">
+          <img src="images/logo.png" alt="Osdito Investments Logo" />
+        </div>
+
+        <div class="desktop-menu">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="mobile-dropdown">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Services Introduction Section -->
+    <section id="services-intro">
+      <h1>Our Comprehensive Services</h1>
+      <p>
+        Osdito Investment Ltd offers a wide range of specialized engineering and
+        fabrication services tailored to meet diverse industrial and commercial
+        needs.
+      </p>
+    </section>
+
+    <!-- Services Cards Section -->
+    <section class="carousel-container">
+      <div class="carousel-track">
+        <div class="service-card">
+          <div class="service-image">
+            <img src="../images/construction.jpg" alt="Construction Works" />
+          </div>
+          <div class="service-desc">
+            <h2>Construction Works & General Supplies</h2>
+            <p>
+              Comprehensive solutions for building projects including material
+              supply, logistical support, and detailed project management. We
+              ensure efficient execution of construction initiatives from
+              concept to completion.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img
+              src="../images/metal-fabrication.jpg"
+              alt="Metal Fabrication"
+            />
+          </div>
+          <div class="service-desc">
+            <h2>Metal Fabrication & Designing</h2>
+            <p>
+              Expert custom metal structure creation, precision welding, and
+              innovative sheet metal works. Our advanced techniques and skilled
+              craftsmen transform raw materials into sophisticated metal
+              solutions.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="../images/furniture.jpg" alt="Furniture & Louvers" />
+          </div>
+          <div class="service-desc">
+            <h2>Furniture & Metallic Louvers</h2>
+            <p>
+              Bespoke furniture manufacturing and elegant metallic louver
+              design. We combine aesthetic appeal with functional precision to
+              create unique, high-quality products tailored to your
+              specifications.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img
+              src="../images/metal-cutting.jpg"
+              alt="Metal Cutting and Forming"
+            />
+          </div>
+          <div class="service-desc">
+            <h2>Heavy-Duty Metal Processing</h2>
+            <p>
+              Advanced industrial fabrication including aluminum and steel
+              cutting, rolling, drilling, and bending. Our state-of-the-art
+              equipment ensures precise and efficient metal transformation for
+              complex engineering requirements.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img
+              src="../images/industrial-metalworks.jpg"
+              alt="Industrial Metalworks"
+            />
+          </div>
+          <div class="service-desc">
+            <h2>Industrial Metal Works</h2>
+            <p>
+              Large-scale metal fabrication solutions for industrial
+              applications. We deliver robust, high-performance metal structures
+              and components designed to meet the most demanding industrial
+              standards.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="../images/woodworks.jpg" alt="Wood Works" />
+          </div>
+          <div class="service-desc">
+            <h2>Wood Works & Edge Banding</h2>
+            <p>
+              Exceptional woodworking craftsmanship featuring high-precision
+              edge banding. We transform raw wood into refined, professionally
+              finished products with meticulous attention to detail.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="../images/training.jpg" alt="Vocational Training" />
+          </div>
+          <div class="service-desc">
+            <h2>Vocational Skills Training</h2>
+            <p>
+              Comprehensive skill development programs in metal and wood
+              fabrication. Our training equips individuals with practical,
+              industry-relevant skills to excel in engineering and manufacturing
+              sectors.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="prev">‹</button>
+      <button class="next">›</button>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="service-cta">
+      <h2>Ready to Start Your Project?</h2>
+      <p>
+        Contact us for a consultation and discover how Osdito can bring your
+        vision to life.
+      </p>
+      <a href="contact.html" class="cta-button">Get In Touch</a>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h2>Contacts and Location</h2>
+          <p>Phone: 0785503130/0754632902</p>
+          <p>Email: osditoengineering@gmail.com</p>
+          <p>Location: BAT Road, Ayivu Division, Arua City</p>
+        </div>
+        <div>
+          <h2>Socials</h2>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com/osditoinvestments" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Quick Links</h2>
+          <a href="#">Home</a>
+          <a href="pages/about.html">About us</a>
+          <a href="pages/services.html">Services</a>
+          <a href="pages/projects.html">Projects</a>
+          <a href="pages/contact.html">Contact us</a>
+        </div>
+      </div>
+      <div class="copyright-section">
+        <p>&copy; 2025 Osdito Investments Ltd. All Rights Reserved.</p>
+        <p>Developed by GradeGlider</p>
+      </div>
+    </footer>
+    <script src="carousel.js"></script>
+    <script>
+      function toggleMobileMenu() {
+        const mobileDropdown = document.querySelector(".mobile-dropdown");
+        mobileDropdown.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

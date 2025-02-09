@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+    <link rel="stylesheet" href="contact.css" />
+    <style>
+      :root {
+        --primary-color: #0eb656;
+        --secondary-color: #1582c4;
+        --text-color: #333333;
+        --background-color: #f4f9e8;
+        --contrast-color: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.7;
+      }
+      nav {
+        background-color: var(--contrast-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4.5rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      nav img {
+        max-height: 60px;
+      }
+      nav .desktop-menu {
+        display: flex;
+        align-items: center;
+      }
+      nav .desktop-menu a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      nav .desktop-menu a:hover {
+        color: var(--secondary-color);
+      }
+
+      /* Mobile Dropdown Styles */
+      nav .mobile-menu-toggle {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      nav .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+      nav .mobile-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--contrast-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      nav .mobile-dropdown a {
+        display: block;
+        padding: 1rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-top: 1px solid #f1f1f1;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 768px) {
+        nav .desktop-menu {
+          display: none;
+        }
+        nav .mobile-menu-toggle {
+          display: flex;
+        }
+        nav .mobile-dropdown {
+          display: block;
+          transform: scaleY(0);
+          transform-origin: top;
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        nav .mobile-dropdown.active {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+      footer {
+        background: var(--text-color);
+        color: var(--contrast-color);
+        padding: 3rem 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      footer a,
+      footer p {
+        color: var(--contrast-color);
+        text-decoration: none;
+        margin: 0.5rem 0;
+        display: block;
+        transition: color 0.3s ease;
+      }
+      footer a:hover {
+        color: var(--primary-color);
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .social-icons a {
+        display: inline-block;
+        color: var(--contrast-color);
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: var(--primary-color);
+      }
+      .copyright-section {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+      }
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .social-icons {
+          justify-content: center;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <title>Contact Osdito</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo">
+          <img src="images/logo.png" alt="Osdito Investments Logo" />
+        </div>
+
+        <div class="desktop-menu">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="mobile-dropdown">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="contact-main">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h1>Contact Osdito</h1>
+
+          <div class="contact-details">
+            <h2>Office Location</h2>
+            <p>BAT Road, Ayivu Division, Arua City</p>
+
+            <h2>Contact Numbers</h2>
+            <p>General Inquiries: 0785503130</p>
+            <p>Sales Department: 0754632902</p>
+
+            <h2>Email</h2>
+            <p>General: osditoengineering@gmail.com</p>
+            <p>Sales: sales@osditoengineering.com</p>
+
+            <h2>Working Hours</h2>
+            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+            <p>Saturday: 9:00 AM - 1:00 PM</p>
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>Send Us a Message</h2>
+          <form action="submit-form" method="post">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Optional phone number"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="department">Department</label>
+              <select id="department" name="department">
+                <option value="">Select Department</option>
+                <option value="sales">Sales</option>
+                <option value="support">Customer Support</option>
+                <option value="projects">Project Inquiries</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                placeholder="Enter message subject"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Type your message here..."
+                rows="5"
+              ></textarea>
+            </div>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="map-section">
+        <h2>Find Us</h2>
+        <div id="map-placeholder">
+          <img src="/api/placeholder/800/400" alt="Google Maps Location" />
+          <p>Note: Actual Google Maps integration would be placed here</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h2>Contacts and Location</h2>
+          <p>Phone: 0785503130/0754632902</p>
+          <p>Email: osditoengineering@gmail.com</p>
+          <p>Location: BAT Road, Ayivu Division, Arua City</p>
+        </div>
+        <div>
+          <h2>Socials</h2>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com/osditoinvestments" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Quick Links</h2>
+          <a href="#">Home</a>
+          <a href="pages/about.html">About us</a>
+          <a href="pages/services.html">Services</a>
+          <a href="pages/projects.html">Projects</a>
+          <a href="pages/contact.html">Contact us</a>
+        </div>
+      </div>
+      <div class="copyright-section">
+        <p>&copy; 2024 Osdito Investments Ltd. All Rights Reserved.</p>
+        <p>Developed by GradeGlider</p>
+      </div>
+    </footer>
+    <script>
+      function toggleMobileMenu() {
+        const mobileDropdown = document.querySelector(".mobile-dropdown");
+        mobileDropdown.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

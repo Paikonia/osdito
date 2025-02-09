@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osdito Investments - Engineering & Construction Projects</title>
+    <meta
+      name="description"
+      content="Explore Osdito Investments' ongoing and completed projects in construction, metal fabrication, and industrial design. Discover our innovative engineering solutions."
+    />
+    <meta
+      name="keywords"
+      content="construction projects, metal fabrication, industrial design, engineering solutions, Osdito Investments"
+    />
+    <link
+      rel="canonical"
+      href="https://www.osditoinvestments.com/projects.html"
+    />
+    <style>
+      /* :root {
+        --primary-color: #0eb656;
+        --secondary-color: #1582c4;
+        --background-color: #f4f9e8;
+        --contrast-color: #333333;
+        --white: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      body {
+        background-color: var(--background-color);
+        color: var(--contrast-color);
+        line-height: 1.7;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      nav {
+        background-color: var(--white);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      nav img {
+        max-height: 60px;
+      }
+      nav div a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      nav div a:hover {
+        color: var(--secondary-color);
+      } */
+      :root {
+        --primary-color: #0eb656;
+        --secondary-color: #1582c4;
+        --text-color: #333333;
+        --background-color: #f4f9e8;
+        --contrast-color: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.7;
+      }
+      nav {
+        background-color: var(--contrast-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4.5rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      nav img {
+        max-height: 60px;
+      }
+      nav .desktop-menu {
+        display: flex;
+        align-items: center;
+      }
+      nav .desktop-menu a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      nav .desktop-menu a:hover {
+        color: var(--secondary-color);
+      }
+
+      /* Mobile Dropdown Styles */
+      nav .mobile-menu-toggle {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      nav .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+      nav .mobile-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--contrast-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      nav .mobile-dropdown a {
+        display: block;
+        padding: 1rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-top: 1px solid #f1f1f1;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 768px) {
+        nav .desktop-menu {
+          display: none;
+        }
+        nav .mobile-menu-toggle {
+          display: flex;
+        }
+        nav .mobile-dropdown {
+          display: block;
+          transform: scaleY(0);
+          transform-origin: top;
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        nav .mobile-dropdown.active {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+      .project-section {
+        padding: 4rem 0;
+      }
+      .project-section h1 {
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 2.5rem;
+        font-size: 2.5rem;
+      }
+      .card {
+        display: flex;
+        background: var(--white);
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .project-img {
+        width: 40%;
+        background-color: var(--secondary-color);
+        min-height: 350px;
+        background-size: cover;
+        background-position: center;
+      }
+      .card-content {
+        width: 60%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .card-content h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+      footer {
+        background: var(--text-color);
+        color: var(--contrast-color);
+        padding: 3rem 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      footer a,
+      footer p {
+        color: var(--contrast-color);
+        text-decoration: none;
+        margin: 0.5rem 0;
+        display: block;
+        transition: color 0.3s ease;
+      }
+      footer a:hover {
+        color: var(--primary-color);
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .social-icons a {
+        display: inline-block;
+        color: var(--contrast-color);
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: var(--primary-color);
+      }
+      .copyright-section {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+      }
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .social-icons {
+          justify-content: center;
+        }
+      }
+      @media (max-width: 768px) {
+        .card {
+          flex-direction: column;
+        }
+        .project-img,
+        .card-content {
+          width: 100%;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo">
+          <img src="images/logo.png" alt="Osdito Investments Logo" />
+        </div>
+
+        <div class="desktop-menu">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="mobile-dropdown">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="ongoing-projects" class="project-section container">
+        <h1>Ongoing Projects</h1>
+        <div class="card">
+          <div
+            class="project-img"
+            style="background-image: url('../images/construction-project.jpg')"
+          ></div>
+          <div class="card-content">
+            <h3>Advanced Construction Project</h3>
+            <p>
+              Innovative construction development leveraging cutting-edge
+              engineering techniques and sustainable design principles. Focused
+              on delivering high-quality infrastructure solutions.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div
+            class="project-img"
+            style="background-image: url('../images/metal-fabrication.jpg')"
+          ></div>
+          <div class="card-content">
+            <h3>Precision Metal Fabrication</h3>
+            <p>
+              Complex metal fabrication project showcasing our technical
+              expertise, advanced manufacturing capabilities, and commitment to
+              precision engineering.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div
+            class="project-img"
+            style="background-image: url('../images/industrial-design.jpg')"
+          ></div>
+          <div class="card-content">
+            <h3>Innovative Industrial Design</h3>
+            <p>
+              Cutting-edge industrial design project demonstrating our
+              problem-solving skills, technological innovation, and creative
+              engineering solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="complete-projects" class="project-section container">
+        <h1>Completed Projects</h1>
+        <div class="card">
+          <div
+            class="project-img"
+            style="
+              background-image: url('../images/completed-construction.jpg');
+            "
+          ></div>
+          <div class="card-content">
+            <h3>Landmark Construction Success</h3>
+            <p>
+              Successfully completed construction project highlighting our
+              ability to deliver complex infrastructure solutions on time and
+              beyond client expectations.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div
+            class="project-img"
+            style="
+              background-image: url('../images/metal-fabrication-completed.jpg');
+            "
+          ></div>
+          <div class="card-content">
+            <h3>Advanced Metal Fabrication Project</h3>
+            <p>
+              Completed metal fabrication project demonstrating our rigorous
+              quality standards, technical proficiency, and innovative
+              manufacturing techniques.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div
+            class="project-img"
+            style="background-image: url('../images/design-implementation.jpg')"
+          ></div>
+          <div class="card-content">
+            <h3>Design Innovation Milestone</h3>
+            <p>
+              Successful design project showcasing our comprehensive engineering
+              capabilities, creative problem-solving, and technological
+              innovation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h2>Contacts and Location</h2>
+          <p>Phone: 0785503130/0754632902</p>
+          <p>Email: osditoengineering@gmail.com</p>
+          <p>Location: BAT Road, Ayivu Division, Arua City</p>
+        </div>
+        <div>
+          <h2>Socials</h2>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com/osditoinvestments" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Quick Links</h2>
+          <a href="#">Home</a>
+          <a href="pages/about.html">About us</a>
+          <a href="pages/services.html">Services</a>
+          <a href="pages/projects.html">Projects</a>
+          <a href="pages/contact.html">Contact us</a>
+        </div>
+      </div>
+      <div class="copyright-section">
+        <p>&copy; 2024 Osdito Investments Ltd. All Rights Reserved.</p>
+        <p>Developed by GradeGlider</p>
+      </div>
+    </footer>
+    <script>
+      function toggleMobileMenu() {
+        const mobileDropdown = document.querySelector(".mobile-dropdown");
+        mobileDropdown.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
