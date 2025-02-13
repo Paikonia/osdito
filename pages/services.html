@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -205,7 +205,6 @@
       </nav>
     </header>
 
-    <!-- Services Introduction Section -->
     <section id="services-intro">
       <h1>Our Comprehensive Services</h1>
       <p>
@@ -215,7 +214,6 @@
       </p>
     </section>
 
-    <!-- Services Cards Section -->
     <section class="carousel-container">
       <div class="carousel-track">
         <div class="service-card">
@@ -329,7 +327,6 @@
       <button class="next">›</button>
     </section>
 
-    <!-- Call to Action Section -->
     <section id="service-cta">
       <h2>Ready to Start Your Project?</h2>
       <p>
@@ -390,6 +387,624 @@
         const mobileDropdown = document.querySelector(".mobile-dropdown");
         mobileDropdown.classList.toggle("active");
       }
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover Osdito Investment Ltd's comprehensive engineering and fabrication services including construction, metal fabrication, furniture making, and industrial solutions in Arua City, Uganda."
+    />
+    <title>Engineering & Fabrication Services | Osdito Investments Ltd</title>
+    <style>
+      :root {
+        --primary-color: #0eb656;
+        --secondary-color: #1582c4;
+        --text-color: #333333;
+        --background-color: #f4f9e8;
+        --contrast-color: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.7;
+      }
+
+      section {
+        padding: 0.5rem;
+      }
+      nav {
+        background-color: var(--contrast-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4.5rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      nav img {
+        max-height: 60px;
+      }
+      nav .desktop-menu {
+        display: flex;
+        align-items: center;
+      }
+      nav .desktop-menu a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      nav .desktop-menu a:hover {
+        color: var(--secondary-color);
+      }
+
+      nav .mobile-menu-toggle {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      nav .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+      nav .mobile-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--contrast-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      nav .mobile-dropdown a {
+        display: block;
+        padding: 1rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-top: 1px solid #f1f1f1;
+      }
+
+      @media (max-width: 768px) {
+        nav .desktop-menu {
+          display: none;
+        }
+        nav .mobile-menu-toggle {
+          display: flex;
+        }
+        nav .mobile-dropdown {
+          display: block;
+          transform: scaleY(0);
+          transform-origin: top;
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        nav .mobile-dropdown.active {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+
+      #services-intro {
+        text-align: center;
+        padding: 80px 20px 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      #services-intro h1 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+      }
+
+      .carousel-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 20px;
+      }
+
+      .service-card {
+        flex: 0 0 calc(33.333% - 14px);
+        min-width: calc(33.333% - 14px);
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .service-desc {
+        padding: 20px;
+      }
+
+      .service-desc h2 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .service-desc p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 20px;
+      }
+
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+
+      #service-cta {
+        text-align: center;
+        padding: 60px 20px;
+        background: var(--primary-color);
+        color: white;
+        margin-top: 40px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background: white;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 25px;
+        margin-top: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+      }
+
+      footer {
+        background: var(--text-color);
+        color: var(--contrast-color);
+        padding: 3rem 0;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      footer a,
+      footer p {
+        color: var(--contrast-color);
+        text-decoration: none;
+        margin: 0.5rem 0;
+        display: block;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--primary-color);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .social-icons a {
+        display: inline-block;
+        color: var(--contrast-color);
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: var(--primary-color);
+      }
+
+      .copyright-section {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+      }
+
+      @media (max-width: 992px) {
+        .service-card {
+          flex: 0 0 calc(50% - 10px);
+          min-width: calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .service-card {
+          flex: 0 0 100%;
+          min-width: 100%;
+        }
+
+        #services-intro h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo">
+          <img src="../images/logo.png" alt="Osdito Investments Logo" />
+        </div>
+
+        <div class="desktop-menu">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="mobile-dropdown">
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="services-intro">
+      <h1>Our Comprehensive Services</h1>
+      <p>
+        Osdito Investment Ltd offers a wide range of specialized engineering and
+        fabrication services tailored to meet diverse industrial and commercial
+        needs.
+      </p>
+    </section>
+
+    <section class="carousel-container">
+      <div class="carousel-track">
+        <a href="services/construction-works.html" class="service-card">
+          <div class="service-image">
+            <img
+              src="../images/1.jpg"
+              alt="Construction Works and General Supplies"
+            />
+          </div>
+          <div class="service-desc">
+            <h2>Construction Works & General Supplies</h2>
+            <p>
+              Comprehensive solutions for building projects including material
+              supply, logistical support, and detailed project management.
+            </p>
+          </div>
+        </a>
+
+        <a href="services/metal-fabrication.html" class="service-card">
+          <div class="service-image">
+            <img src="../images/3.jpg" alt="Metal Fabrication and Designing" />
+          </div>
+          <div class="service-desc">
+            <h2>Metal Fabrication & Designing</h2>
+            <p>
+              Expert custom metal structure creation, precision welding, and
+              innovative sheet metal works.
+            </p>
+          </div>
+        </a>
+
+        <a href="services/furniture-louvers.html" class="service-card">
+          <div class="service-image">
+            <img src="../images/12.jpg" alt="Furniture and Metallic Louvers" />
+          </div>
+          <div class="service-desc">
+            <h2>Furniture & Metallic Louvers</h2>
+            <p>
+              Bespoke furniture manufacturing and elegant metallic louver design
+              for both residential and commercial spaces.
+            </p>
+          </div>
+        </a>
+
+        <a href="services/metal-processing.html" class="service-card">
+          <div class="service-image">
+            <img src="../images/8.jpg" alt="Heavy-Duty Metal Processing" />
+          </div>
+          <div class="service-desc">
+            <h2>Heavy-Duty Metal Processing</h2>
+            <p>
+              Advanced industrial fabrication including aluminum and steel
+              cutting, rolling, drilling, and bending.
+            </p>
+          </div>
+        </a>
+
+        <a href="services/industrial-metalworks.html" class="service-card">
+          <div class="service-image">
+            <img src="../images/5.jpg" alt="Industrial Metal Works" />
+          </div>
+          <div class="service-desc">
+            <h2>Industrial Metal Works</h2>
+            <p>
+              Large-scale metal fabrication solutions for industrial
+              applications and demanding environments.
+            </p>
+          </div>
+        </a>
+
+        <a href="services/woodworks.html" class="service-card">
+          <div class="service-image">
+            <img src="../images/10.jpg" alt="Wood Works and Edge Banding" />
+          </div>
+          <div class="service-desc">
+            <h2>Wood Works & Edge Banding</h2>
+            <p>
+              Exceptional woodworking craftsmanship featuring high-precision
+              edge banding and finishing.
+            </p>
+          </div>
+        </a>
+
+        <a href="services/vocational-training.html" class="service-card">
+          <div class="service-image">
+            <img
+              src="../images/industrial_training.jpg"
+              alt="Vocational Skills Training"
+            />
+          </div>
+          <div class="service-desc">
+            <h2>Vocational Skills Training</h2>
+            <p>
+              Comprehensive skill development programs in metal and wood
+              fabrication for aspiring craftsmen.
+            </p>
+          </div>
+        </a>
+      </div>
+      <button class="prev" aria-label="Previous slide">‹</button>
+      <button class="next" aria-label="Next slide">›</button>
+    </section>
+
+    <section id="service-cta">
+      <h2>Ready to Start Your Project?</h2>
+      <p>
+        Contact us for a consultation and discover how Osdito can bring your
+        vision to life.
+      </p>
+      <a href="contact.html" class="cta-button">Get In Touch</a>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h2>Contacts and Location</h2>
+          <p>Phone: 0785503130/0754632902</p>
+          <p>Email: osditoengineering@gmail.com</p>
+          <p>Location: BAT Road, Ayivu Division, Arua City</p>
+        </div>
+        <div>
+          <h2>Socials</h2>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com/osditoinvestments" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/osditoinvestments"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Quick Links</h2>
+          <a href="/">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+      </div>
+      <div class="copyright-section">
+        <p>&copy; 2025 Osdito Investments Ltd. All Rights Reserved.</p>
+        <p>Developed by GradeGlider</p>
+      </div>
+    </footer>
+
+    <script>
+      const track = document.querySelector(".carousel-track");
+      const cards = Array.from(document.querySelectorAll(".service-card"));
+      const prevButton = document.querySelector(".prev");
+      const nextButton = document.querySelector(".next");
+      let currentIndex = 0;
+      let cardsPerView = 3;
+
+      function updateCardsPerView() {
+        if (window.innerWidth <= 576) {
+          cardsPerView = 1;
+        } else if (window.innerWidth <= 992) {
+          cardsPerView = 2;
+        } else {
+          cardsPerView = 3;
+        }
+
+        // Reset position when screen size changes
+        currentIndex = 0;
+        updateCarousel();
+      }
+
+      function updateCarousel() {
+        const cardWidth = track.clientWidth / cardsPerView;
+
+        // Update card widths
+        cards.forEach((card) => {
+          card.style.flex = `0 0 ${cardWidth}px`;
+          card.style.minWidth = `${cardWidth}px`;
+        });
+
+        // Calculate maximum index
+        const maxIndex = Math.max(0, cards.length - cardsPerView);
+
+        // Ensure current index is within bounds
+        currentIndex = Math.min(Math.max(0, currentIndex), maxIndex);
+
+        // Calculate and apply transform
+        const offset = -currentIndex * cardWidth;
+        track.style.transform = `translateX(${offset}px)`;
+
+        // Update button states
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === maxIndex;
+
+        // Update visual state of buttons
+        prevButton.style.opacity = currentIndex === 0 ? "0.5" : "1";
+        nextButton.style.opacity = currentIndex === maxIndex ? "0.5" : "1";
+      }
+
+      prevButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
+
+      nextButton.addEventListener("click", () => {
+        if (currentIndex < cards.length - cardsPerView) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
+
+      // Handle touch events for mobile swipe
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener(
+        "touchstart",
+        (e) => {
+          touchStartX = e.touches[0].clientX;
+        },
+        false
+      );
+
+      track.addEventListener(
+        "touchmove",
+        (e) => {
+          touchEndX = e.touches[0].clientX;
+        },
+        false
+      );
+
+      track.addEventListener(
+        "touchend",
+        () => {
+          const swipeDistance = touchStartX - touchEndX;
+          if (Math.abs(swipeDistance) > 50) {
+            // Minimum swipe distance
+            if (
+              swipeDistance > 0 &&
+              currentIndex < cards.length - cardsPerView
+            ) {
+              currentIndex++;
+            } else if (swipeDistance < 0 && currentIndex > 0) {
+              currentIndex--;
+            }
+            updateCarousel();
+          }
+        },
+        false
+      );
+
+      function toggleMobileMenu() {
+        const mobileDropdown = document.querySelector(".mobile-dropdown");
+        mobileDropdown.classList.toggle("active");
+      }
+
+      // Initialize carousel
+      window.addEventListener("resize", updateCardsPerView);
+      window.addEventListener("load", updateCardsPerView);
     </script>
   </body>
 </html>

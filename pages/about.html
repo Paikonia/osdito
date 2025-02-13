@@ -164,7 +164,7 @@
 
       @media (min-width: 768px) {
         .mission-vision-section {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(1, 1fr);
         }
       }
 
@@ -236,7 +236,7 @@
         transform: translateY(-5px);
         transition: transform 0.3s ease;
       }
-      .core-values {
+      /*.core-values {
         background-color: var(--white);
         padding: 2rem;
         border-radius: 12px;
@@ -254,7 +254,62 @@
         padding: 0.5rem 1rem;
         margin: 0.5rem;
         border-radius: 20px;
+      } */
+      .core-values {
+        background-color: var(--white);
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
       }
+
+      .core-values h2 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .core-values p {
+        font-size: 1.1rem;
+        color: var(--text-color);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .core-values ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0;
+      }
+
+      .core-values ul li {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: var(--white);
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        margin: 0.5rem;
+        border-radius: 25px;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .core-values ul li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
       #leadership {
         text-align: center;
       }
@@ -348,7 +403,7 @@
         font-size: 1.5rem;
         transition: color 0.3s ease;
       }
-      .footer-grid>div > h2 {
+      .footer-grid > div > h2 {
         color: white;
       }
       .social-icons a:hover {
@@ -408,7 +463,7 @@
     </header>
 
     <main>
-      <section id="company-background" class="container">
+      <!-- <section id="company-background" class="container">
         <h1>Our Company Background</h1>
         <p>
           Osdito Investments Limited is a dynamic engineering and investment
@@ -417,72 +472,209 @@
           pride ourselves on delivering high-quality services across multiple
           sectors.
         </p>
+      </section> -->
+      <section id="company-background" class="company-background container">
+        <div class="background-content">
+          <h1>About Osdito Investments Ltd</h1>
+          <p>
+            <strong>Osdito Investments Ltd</strong> is a
+            <strong
+              >leading engineering and construction company in Uganda</strong
+            >, specializing in
+            <strong
+              >metal fabrication, industrial metalworks, general supplies, and
+              precision engineering</strong
+            >. Located in
+            <strong>BAT Road, Ayivu Division, Arua City, Uganda</strong>, we are
+            committed to
+            <strong
+              >delivering high-quality, durable, and innovative
+              solutions</strong
+            >
+            tailored to meet the needs of
+            <strong>businesses, industries, and communities</strong> across
+            <strong>Arua City, Uganda, and East Africa</strong>.
+          </p>
+
+          <p>
+            With a strong reputation for
+            <strong>excellence, reliability, and customer satisfaction</strong>,
+            Osdito Investments Ltd offers
+            <strong
+              >steel cutting, aluminum and metal rolling, drilling, bending,
+              welding, and heavy-duty metalworks</strong
+            >. Our expertise extends to
+            <strong
+              >furniture manufacturing, metallic louvers, industrial structures,
+              edge banding, and vocational training</strong
+            >, ensuring we contribute to both
+            <strong>economic growth and skills development</strong> in the
+            region.
+          </p>
+
+          <p>
+            At Osdito Investments Ltd, we combine
+            <strong
+              >cutting-edge technology, advanced machinery, and a highly skilled
+              workforce</strong
+            >
+            to produce <strong>custom metal fabrication solutions</strong> that
+            exceed industry standards. Our commitment to
+            <strong>sustainability, innovation, and cost-effectiveness</strong>
+            makes us the <strong>preferred partner</strong> for individuals,
+            businesses, and government projects looking for
+            <strong>high-quality engineering and construction services</strong>.
+          </p>
+
+          <p class="cta">
+            <strong>Looking for expert engineering solutions?</strong> Contact
+            Osdito Investments Ltd today for **trusted, innovative, and
+            cost-efficient engineering services in Uganda and East Africa**!
+          </p>
+        </div>
       </section>
+
       <section class="mission-vision-section">
         <article class="card">
           <div class="card-content">
-            <h2>Mission</h2>
+            <h2>Our Mission</h2>
             <p>
-              To provide exceptional engineering and investment solutions that
-              drive sustainable growth and innovation, while maintaining the
-              highest standards of quality and customer satisfaction.
+              At Osdito Investments Ltd, our mission is to provide
+              <strong
+                >exceptional engineering, construction, and investment
+                solutions</strong
+              >
+              that drive
+              <strong
+                >sustainable development, technological innovation, and economic
+                growth</strong
+              >. We are committed to delivering
+              <strong
+                >high-quality metal fabrication, industrial metalworks, and
+                structural engineering services</strong
+              >
+              while maintaining
+              <strong
+                >environmental responsibility, safety, and customer
+                satisfaction</strong
+              >. Through precision, efficiency, and cutting-edge technology, we
+              aim to
+              <strong>empower businesses, communities, and industries</strong>
+              across <strong>Arua City, Uganda, and beyond</strong>.
             </p>
           </div>
           <div class="card-image">
-            <img src="../images/1.jpg" alt="Mission image" />
+            <img
+              src="../images/1.jpg"
+              alt="Osdito Investments Ltd Mission - Engineering and Investment Solutions in Uganda"
+            />
           </div>
         </article>
 
         <article class="card">
           <div class="card-content">
-            <h2>Vision</h2>
+            <h2>Our Vision</h2>
             <p>
-              To be a leading provider of comprehensive engineering and
-              investment services, recognized for our creativity, reliability,
-              and commitment to client success.
+              Our vision is to be the
+              <strong
+                >leading engineering and construction company in Uganda and East
+                Africa</strong
+              >, recognized for our
+              <strong>innovation, precision, and reliability</strong>. We strive
+              to set industry benchmarks by delivering
+              <strong
+                >sustainable, cost-effective, and high-performance engineering
+                solutions</strong
+              >
+              that contribute to infrastructure development and economic
+              prosperity. Osdito Investments Ltd aims to be the
+              <strong
+                >go-to partner for metal fabrication, construction, industrial
+                solutions, and investment services</strong
+              >, ensuring
+              <strong
+                >client success, technological advancement, and community
+                empowerment</strong
+              >.
             </p>
           </div>
           <div class="card-image">
-            <img src="../images/10.jpg" alt="Vision image" />
+            <img
+              src="../images/10.jpg"
+              alt="Osdito Investments Ltd Vision - Engineering and Investment Excellence in Uganda"
+            />
           </div>
         </article>
       </section>
 
       <section id="mission-vision" class="container">
-        <!-- <div class="mission-container">
-          <article>
-            <div>
-              <h2 class="mission-heading">Mission</h2>
-              <p>
-                To provide exceptional engineering and investment solutions that
-                drive sustainable growth and innovation, while maintaining the
-                highest standards of quality and customer satisfaction.
-              </p>
-            </div>
-            <img src="../images/1.jpg" alt="Mission image" />
-          </article>
-          <article>
-            <div>
-              <h2 class="mission-heading">Vision</h2>
-              <p>
-                To be a leading provider of comprehensive engineering and
-                investment services, recognized for our creativity, reliability,
-                and commitment to client success.
-              </p>
-            </div>
-            <img src="../images/10.jpg" alt="">
-          </article>
-        </div> -->
-
         <div class="core-values">
           <h2>Our Core Values</h2>
+          <p>
+            At Osdito Investments Ltd, our success is built on a strong
+            foundation of values that guide our operations, decision-making, and
+            relationships with clients, partners, and communities across
+            <strong>Arua City, Uganda, and East Africa</strong>. These
+            principles ensure we consistently deliver
+            <strong
+              >high-quality engineering, construction, and metal fabrication
+              solutions</strong
+            >
+            while maintaining ethical business practices and innovation.
+          </p>
+
           <ul>
-            <li>Integrity</li>
-            <li>Innovation</li>
-            <li>Customer Focus</li>
-            <li>Continuous Improvement</li>
-            <li>Sustainability</li>
+            <li>
+              <strong>Integrity:</strong> We uphold the highest ethical
+              standards in all our business dealings, fostering trust and
+              transparency with clients, partners, and stakeholders.
+            </li>
+
+            <li>
+              <strong>Innovation:</strong> We embrace cutting-edge technologies
+              and creative solutions to enhance efficiency, precision, and
+              sustainability in our
+              <strong
+                >metal fabrication, industrial metalworks, and engineering
+                projects</strong
+              >.
+            </li>
+
+            <li>
+              <strong>Customer Focus:</strong> Our clients are at the heart of
+              everything we do. We listen, understand their needs, and deliver
+              **customized, cost-effective engineering solutions** that exceed
+              expectations.
+            </li>
+
+            <li>
+              <strong>Continuous Improvement:</strong> We are committed to
+              ongoing learning, skill development, and adopting the latest
+              industry best practices to stay ahead in the
+              <strong>construction, fabrication, and investment sectors</strong
+              >.
+            </li>
+
+            <li>
+              <strong>Sustainability:</strong> We integrate eco-friendly
+              practices into our operations, ensuring that our
+              <strong>engineering and metalwork solutions</strong> contribute to
+              a greener, more sustainable future.
+            </li>
           </ul>
+
+          <p>
+            At Osdito Investments Ltd, our core values drive our commitment to
+            <strong>excellence, reliability, and innovation</strong> in the
+            <strong
+              >engineering and construction industry in Uganda and
+              beyond</strong
+            >.
+            <strong
+              >Partner with us today for sustainable and high-quality
+              engineering solutions tailored to your needs!</strong
+            >
+          </p>
         </div>
       </section>
 
