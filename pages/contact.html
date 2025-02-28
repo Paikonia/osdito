@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="../styles.css" /> -->
-    <link rel="stylesheet" href="contact.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+
+    <title>Contact Osdito</title>
+
     <style>
       :root {
         --primary-color: #0eb656;
@@ -168,13 +176,106 @@
           justify-content: center;
         }
       }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
 
-    <title>Contact Osdito</title>
+      /* Contact Page Specific Styles */
+      #contact-main {
+        padding: 2rem;
+      }
+
+      .contact-container {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .contact-info {
+        width: 40%;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form {
+        width: 60%;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-details h2 {
+        color: var(--primary-color);
+        margin-top: 1rem;
+      }
+
+      .contact-details p {
+        margin: 0.5rem 0;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid var(--primary-color);
+        border-radius: 4px;
+      }
+
+      .map-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #map-placeholder {
+        width: 100%;
+        height: 400px;
+        background: var(--secondary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--contrast-color);
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: var(--primary-color);
+      }
+
+      @media (max-width: 768px) {
+        .contact-container {
+          flex-direction: column;
+        }
+
+        .contact-info,
+        .contact-form {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -299,7 +400,7 @@
               ></textarea>
             </div>
 
-            <button type="submit">Send Message</button>
+            <button class="btn" type="submit">Send Message</button>
           </form>
         </div>
       </div>
@@ -324,6 +425,7 @@
         <div>
           <h2>Socials</h2>
           <div class="social-icons">
+            <!-- Continue from previous footer code -->
             <a
               href="https://www.facebook.com/osditoinvestments"
               target="_blank"
@@ -343,18 +445,31 @@
         </div>
         <div>
           <h2>Quick Links</h2>
-          <a href="#">Home</a>
-          <a href="pages/about.html">About us</a>
-          <a href="pages/services.html">Services</a>
+          <a href="/">Home</a>
+          <a href="/pages/about.html">About us</a>
+          <a href="/pages/services.html">Services</a>
           <!-- <a href="pages/projects.html">Projects</a> -->
-          <a href="pages/contact.html">Contact us</a>
+          <a href="/pages/contact.html">Contact us</a>
         </div>
       </div>
       <div class="copyright-section">
-        <p>&copy; 2024 Osdito Investments Ltd. All Rights Reserved.</p>
-        <p>Developed by GradeGlider</p>
+        <p>&copy; 2025 Osdito Investments Ltd. All Rights Reserved.</p>
+        <p>
+          Developed by
+          <a
+            style="
+              display: inline;
+              text-decoration: underline;
+              color: var(--secondary-color);
+            "
+            target="_blank"
+            href="https://gradeglider.com/"
+            >GradeGlider</a
+          >
+        </p>
       </div>
     </footer>
+
     <script>
       function toggleMobileMenu() {
         const mobileDropdown = document.querySelector(".mobile-dropdown");
