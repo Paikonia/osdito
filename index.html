@@ -124,10 +124,10 @@
         }
       }
       #heading {
-        background: url("images/compressed/main\ page.webp");
+        background: url("images/compressed/3.webp");
         background-size: cover;
         background-position: center;
-        color: var(--primary-color);
+        color: var(--contrast-color);
         text-align: center;
         padding: 10rem 2rem 5rem;
       }
@@ -172,6 +172,49 @@
       #services {
         padding: 4rem 2rem;
         background-color: var(--contrast-color);
+      }
+
+      /* Why Osdito Section Styling */
+      #why-osdito {
+        padding: 4rem 2rem;
+        background-color: var(--contrast-color);
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin: 2rem auto;
+        max-width: 1200px;
+      }
+      
+      #why-osdito h1 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+      }
+      
+      #why-osdito h1:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--secondary-color);
+        border-radius: 2px;
+      }
+      
+      #why-osdito p {
+        max-width: 900px;
+        margin: 0 auto 1.5rem;
+        font-size: 1.1rem;
+      }
+      
+      #why-osdito .btn {
+        margin-top: 1.5rem;
+        font-weight: 500;
+        padding: 0.8rem 2rem;
       }
 
       /* Carousel Common Styles */
@@ -353,6 +396,9 @@
         .testimonial-container {
           grid-template-columns: repeat(2, 1fr);
         }
+        #why-osdito h1 {
+          font-size: 2rem;
+        }
       }
 
       @media (max-width: 768px) {
@@ -373,6 +419,15 @@
         .social-icons {
           justify-content: center;
         }
+        #why-osdito {
+          padding: 2rem 1rem;
+        }
+        #why-osdito h1 {
+          font-size: 1.8rem;
+        }
+        #why-osdito p {
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
@@ -383,7 +438,7 @@
       </div>
 
       <div class="desktop-menu">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="pages/about.html">About us</a>
         <a href="pages/services.html">Services</a>
         <a href="pages/projects.html">Projects</a>
@@ -397,7 +452,7 @@
       </div>
 
       <div class="mobile-dropdown">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="pages/about.html">About us</a>
         <a href="pages/services.html">Services</a>
         <a href="pages/projects.html">Projects</a>
@@ -408,7 +463,7 @@
     <div id="heading">
       <h4>OSDITO INVESTMENTS LTD.</h4>
       <h1>Engineering your dreams with confidence</h1>
-      <a href="/pages/contact.html" class="btn">Get A Free Quote</a>
+      <a href="pages/contact.html" class="btn">Get A Free Quote</a>
     </div>
 
     <div id="about">
@@ -432,31 +487,18 @@
         your projects!
       </p>
       <div id="aboutButtonContainer">
-        <a href="/pages/contact.html" class="btn">Get Started</a>
-        <a href="/pages/contact.html" class="btn">Get A Free Quote</a>
+        <a href="pages/contact.html" class="btn">Get Started</a>
+        <a href="pages/contact.html" class="btn">Get A Free Quote</a>
       </div>
     </div>
 
-    <!-- <div id="services">
-      <div class="carousel">
-        <div class="carousel-images">
-          <img src="images/1.jpg" class="active" alt="Image 1" />
-          <img src="images/2.png" alt="Image 2" />
-          <img src="images/5.jpg" alt="Image 3" />
-          <img src="images/4.jpg" alt="Image 4" />
-        </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
-      </div>
-    </div> -->
-
-    <!-- <div id="testimonial">
+    <div id="testimonial">
       <h1>Testimonials</h1>
       <div class="testimonial-carousel">
         <div class="testimonial-container">
           <div class="testimonial_card">
             <div class="image">
-              <img src="./images/img1.jpeg" alt="First client" />
+              <img src="/images/compressed/img1.webp" alt="First client" />
             </div>
             <h1>Emmanuel</h1>
             <p>
@@ -467,7 +509,7 @@
           </div>
           <div class="testimonial_card">
             <div class="image">
-              <img src="./images/white_guy.jpeg" alt="Construction site" />
+              <img src="/images/compressed/white_guy.webp" alt="Construction site" />
             </div>
             <h1>Clemant</h1>
             <p>
@@ -478,7 +520,7 @@
           </div>
           <div class="testimonial_card">
             <div class="image">
-              <img src="./images/asian_huy.jpeg" alt="Construction site" />
+              <img src="/images/compressed/asian_huy.webp" alt="Construction site" />
             </div>
             <h1>Xi</h1>
             <p>
@@ -488,13 +530,40 @@
             </p>
           </div>
         </div>
-        <button class="prev" onclick="prevTestimonial()">&#10094;</button>
-        <button class="next" onclick="nextTestimonial()">&#10095;</button>
+        <button style="display: none;" class="prev" onclick="prevTestimonial()">
+          &#10094;
+        </button>
+        <button style="display: none;" class="next" onclick="nextTestimonial()">
+          &#10095;
+        </button>
       </div>
       <div class="btn-container">
-        <a href="/pages/contact.html" class="btn">Submit a Query</a>
+        <a href="pages/contact.html" class="btn">Submit a Query</a>
       </div>
-    </div> -->
+    </div>
+
+    <section id="why-osdito">
+      <h1>Why Osdito?</h1>
+      <p>
+        Osdito Investments Ltd is your premier partner for custom metal
+        fabrication, construction, and precision engineering solutions in Arua
+        City, Uganda. With years of industry expertise, our team transforms
+        innovative ideas into reality through cutting-edge techniques and
+        state-of-the-art equipment. We specialize in industrial
+        metalworks—ranging from aluminum and steel cutting, rolling, drilling,
+        and bending to bespoke structural fabrication—ensuring every project
+        meets the highest standards of quality and efficiency.
+      </p>
+      <p>
+        Our unwavering commitment to excellence, reliability, and client
+        satisfaction sets us apart. At Osdito, we tailor our engineering
+        services to match your unique project needs, delivering cost-effective,
+        durable, and innovative solutions that drive your success. Choose Osdito
+        Investments Ltd to experience expert craftsmanship and engineering
+        precision that builds lasting value.
+      </p>
+      <a class="btn" href="pages/services.html">Our Services</a>
+    </section>
 
     <footer>
       <div class="footer-grid">
@@ -551,11 +620,11 @@
         </div>
         <div>
           <h2>Quick Links</h2>
-          <a href="/">Home</a>
-          <a href="/pages/about.html">About us</a>
-          <a href="/pages/services.html">Services</a>
+          <a href="index.html">Home</a>
+          <a href="pages/about.html">About us</a>
+          <a href="pages/services.html">Services</a>
           <a href="pages/projects.html">Projects</a>
-          <a href="/pages/contact.html">Contact us</a>
+          <a href="pages/contact.html">Contact us</a>
         </div>
       </div>
       <div class="copyright-section">
@@ -588,15 +657,19 @@
       const slides = document.querySelectorAll(".carousel-images img");
 
       function nextSlide() {
-        slides[currentSlide].classList.remove("active");
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add("active");
+        if (slides.length > 0) {
+          slides[currentSlide].classList.remove("active");
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.add("active");
+        }
       }
 
       function prevSlide() {
-        slides[currentSlide].classList.remove("active");
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        slides[currentSlide].classList.add("active");
+        if (slides.length > 0) {
+          slides[currentSlide].classList.remove("active");
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          slides[currentSlide].classList.add("active");
+        }
       }
 
       // Testimonials Carousel
@@ -649,7 +722,9 @@
 
       // Auto-sliding functionality
       function autoSlide() {
-        nextSlide();
+        if (slides.length > 0) {
+          nextSlide();
+        }
         nextTestimonial();
       }
 
@@ -657,7 +732,7 @@
       function initializeCarousels() {
         showTestimonials();
         // Start auto-sliding for both carousels
-        setInterval(autoSlide, 3000);
+        setInterval(autoSlide, 5000);
       }
 
       // Event Listeners
