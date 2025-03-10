@@ -137,7 +137,7 @@
       }
       .card {
         display: flex;
-        background: var(--white);
+        background: var(--contrast-color);
         margin-bottom: 2rem;
         border-radius: 12px;
         overflow: hidden;
@@ -147,13 +147,30 @@
       .card:hover {
         transform: translateY(-5px);
       }
-      .project-img {
+
+      /* Carousel Styles */
+      .carousel-container {
         width: 40%;
-        background-color: var(--secondary-color);
+        position: relative;
         min-height: 350px;
+        overflow: hidden;
+        background-color: var(--secondary-color);
+      }
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-size: cover;
         background-position: center;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
       }
+      .carousel-slide.active {
+        opacity: 1;
+      }
+
       .card-content {
         width: 60%;
         padding: 2rem;
@@ -165,6 +182,22 @@
         color: var(--primary-color);
         margin-bottom: 1rem;
         font-size: 1.5rem;
+      }
+      .location-badge {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--contrast-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .project-details {
+        margin-top: 1rem;
+      }
+      .project-details ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
       }
       footer {
         background: var(--text-color);
@@ -224,7 +257,7 @@
         .card {
           flex-direction: column;
         }
-        .project-img,
+        .carousel-container,
         .card-content {
           width: 100%;
         }
@@ -239,15 +272,15 @@
     <header>
       <nav>
         <div id="logo">
-          <img src="../images/logo.png" alt="Osdito Investments Logo" />
+          <img src="/images/logo.png" alt="Osdito Investments Logo" />
         </div>
 
         <div class="desktop-menu">
           <a href="/">Home</a>
-          <a href="about.html">About us</a>
-          <a href="services.html">Services</a>
-          <!-- <a href="projects.html">Projects</a> -->
-          <a href="contact.html">Contact us</a>
+          <a href="/pages/about.html">About us</a>
+          <a href="/pages/services.html">Services</a>
+          <a href="/pages/projects.html">Projects</a>
+          <a href="/pages/contact.html">Contact us</a>
         </div>
 
         <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
@@ -258,10 +291,10 @@
 
         <div class="mobile-dropdown">
           <a href="/">Home</a>
-          <a href="about.html">About us</a>
-          <a href="services.html">Services</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact us</a>
+          <a href="/pages/about.html">About us</a>
+          <a href="/pages/services.html">Services</a>
+          <a href="/pages/projects.html">Projects</a>
+          <a href="/pages/contact.html">Contact us</a>
         </div>
       </nav>
     </header>
@@ -270,95 +303,176 @@
       <section id="ongoing-projects" class="project-section container">
         <h1>Ongoing Projects</h1>
         <div class="card">
-          <div
-            class="project-img"
-            style="background-image: url('../images/construction-project.jpg')"
-          ></div>
+          <div class="carousel-container" id="market-carousel">
+            <div
+              class="carousel-slide active"
+              style="
+                background-image: url('/images/compressed/adminhouse.webp');
+              "
+            ></div>
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/gate.webp')"
+            ></div>
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/market.webp')"
+            ></div>
+          </div>
           <div class="card-content">
-            <h3>Advanced Construction Project</h3>
+            <span class="location-badge"
+              >Yumbe District, Kochi Trading Centre</span
+            >
+            <h3>Market Development Project</h3>
             <p>
-              Innovative construction development leveraging cutting-edge
-              engineering techniques and sustainable design principles. Focused
-              on delivering high-quality infrastructure solutions.
+              Comprehensive market development project designed to enhance
+              economic activities and support local traders through improved
+              infrastructure and facilities.
             </p>
+            <div class="project-details">
+              <ul>
+                <li>Admin block construction</li>
+                <li>
+                  Lockup facilities for house items, crafts and specialized
+                  stalls for chicken, fish and butcheries
+                </li>
+                <li>Designated stalls for vegetables and fruits</li>
+                <li>Gender-segregated toilet facilities</li>
+                <li>External works and landscaping</li>
+                <li>Complete mechanical and electrical installation</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div
-            class="project-img"
-            style="background-image: url('../images/metal-fabrication.jpg')"
-          ></div>
+          <div class="carousel-container" id="resource-carousel">
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/resources.webp')"
+            ></div>
+            <div
+              class="carousel-slide"
+              style="
+                background-image: url('/images/compressed/resourcecenter.webp');
+              "
+            ></div>
+          </div>
           <div class="card-content">
-            <h3>Precision Metal Fabrication</h3>
+            <span class="location-badge">Yumbe District</span>
+            <h3>Community Resource Center</h3>
             <p>
-              Complex metal fabrication project showcasing our technical
-              expertise, advanced manufacturing capabilities, and commitment to
-              precision engineering.
+              State-of-the-art resource center designed to serve as an
+              educational and community hub, providing valuable facilities and
+              resources for local development.
             </p>
+            <div class="project-details">
+              <ul>
+                <li>Resource center main block construction</li>
+                <li>Modern gents and ladies toilet facilities</li>
+                <li>Comprehensive mechanical and electrical installation</li>
+                <li>
+                  Designed for optimal functionality and community accessibility
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div
-            class="project-img"
-            style="background-image: url('../images/industrial-design.jpg')"
-          ></div>
+          <div class="carousel-container" id="playground-carousel">
+            <div
+              class="carousel-slide active"
+              style="background-image: url('/images/compressed/images.webp')"
+            ></div>
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/toilets.webp')"
+            ></div>
+            
+          </div>
           <div class="card-content">
-            <h3>Innovative Industrial Design</h3>
+            <span class="location-badge">Yumbe District</span>
+            <h3>Community Playground Development</h3>
             <p>
-              Cutting-edge industrial design project demonstrating our
-              problem-solving skills, technological innovation, and creative
-              engineering solutions.
+              Modern recreational facility featuring a regulation football pitch
+              and supporting amenities to promote sports, community engagement,
+              and youth development.
             </p>
+            <div class="project-details">
+              <ul>
+                <li>Regulation football pitch construction</li>
+                <li>Separate gents and ladies toilet facilities</li>
+                <li>Comprehensive external works and landscaping</li>
+                <li>Complete mechanical and electrical installation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="carousel-container" id="school-carousel">
+            <div
+              class="carousel-slide active"
+              style="
+                background-image: url('/images/compressed/classrooms.webp');
+              "
+            ></div>
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/classwithtank.webp')"
+            ></div>
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/schoolfurniture.webp')"
+            ></div>
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/schooltoilet.webp')"
+            ></div>
+          </div>
+          <div class="card-content">
+            <span class="location-badge">Arua District, Driciri Primary School</span>
+            <h3>School Infrastructure Development Project</h3>
+            <p>
+              Comprehensive educational infrastructure project designed to improve learning conditions and sanitation facilities for students at Driciri Primary School through modern classrooms, clean water access, and essential amenities.
+            </p>
+            <div class="project-details">
+              <ul>
+                <li>Construction of 2 blocks of 3 classrooms (one with an office)</li>
+                <li>Construction of 2 blocks of 5-stance VIP latrines (separate for boys and girls)</li>
+                <li>Supply of furniture for new classrooms</li>
+                <li>Supply and installation of 10,000-liter capacity stainless steel rainwater harvesting tanks</li>
+                <li>Lightning protection system installation</li>
+                <li>External works and landscaping</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="complete-projects" class="project-section container">
-        <h1>Completed Projects</h1>
+      <section id="incomplete-projects" class="project-section container">
+        <h1>Upcoming Projects</h1>
         <div class="card">
-          <div
-            class="project-img"
-            style="
-              background-image: url('../images/completed-construction.jpg');
-            "
-          ></div>
-          <div class="card-content">
-            <h3>Landmark Construction Success</h3>
-            <p>
-              Successfully completed construction project highlighting our
-              ability to deliver complex infrastructure solutions on time and
-              beyond client expectations.
-            </p>
+          <div class="carousel-container" id="engineering-carousel">
+            <div
+              class="carousel-slide"
+              style="background-image: url('/images/compressed/building.webp')"
+            ></div>
           </div>
-        </div>
-        <div class="card">
-          <div
-            class="project-img"
-            style="
-              background-image: url('../images/metal-fabrication-completed.jpg');
-            "
-          ></div>
           <div class="card-content">
-            <h3>Advanced Metal Fabrication Project</h3>
+            <span class="location-badge">Terego District Headquarters</span>
+            <h3>Engineering Block Construction</h3>
             <p>
-              Completed metal fabrication project demonstrating our rigorous
-              quality standards, technical proficiency, and innovative
-              manufacturing techniques.
+              Planned construction of a specialized engineering block at the
+              Terego District Headquarters, designed to enhance technical
+              capabilities and infrastructure development in the region.
             </p>
-          </div>
-        </div>
-        <div class="card">
-          <div
-            class="project-img"
-            style="background-image: url('../images/design-implementation.jpg')"
-          ></div>
-          <div class="card-content">
-            <h3>Design Innovation Milestone</h3>
-            <p>
-              Successful design project showcasing our comprehensive engineering
-              capabilities, creative problem-solving, and technological
-              innovation.
-            </p>
+            <div class="project-details">
+              <ul>
+                <li>Modern engineering facility construction</li>
+                <li>Technical workspace development</li>
+                <li>Specialized equipment installation</li>
+                <li>Supporting infrastructure and utilities</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -368,35 +482,49 @@
       <div class="footer-grid">
         <div>
           <h2>Contacts and Location</h2>
-          <a href="tel:0393102328"> <i class="fas fa-phone"></i> 0393102328</a>
+          <div>
+            <h3>Mobile</h3>
+            <a href="tel:0393102328">
+              <i class="fas fa-phone"></i> 0393102328</a
+            >
 
-          <a href="https://wa.link/fn7cx1" target="_blank"
-            ><i class="fab fa-whatsapp"></i> 0785503130</a
-          >
-          <a href="mailto:osditoengineering@gmail.com">
-            <i class="fas fa-envelope"></i>
-            osditoengineering@gmail.com</a
-          >
-
-          <p>
-            <i class="fas fa-map-marker-alt"></i> BAT Road, Ayivu Division, Arua
-            City
-          </p>
+            <a href="https://wa.link/fn7cx1" target="_blank"
+              ><i class="fab fa-whatsapp"></i> 0785503130</a
+            >
+          </div>
+          <div>
+            <h3>Mail</h3>
+            <a href="mailto:osditoengineering@gmail.com">
+              <i class="fas fa-envelope"></i>
+              osditoengineering@gmail.com</a
+            >
+            <a href="mailto:support@osditoinvestments.com">
+              <i class="fas fa-envelope"></i>
+              support@osditoinvestments.com</a
+            >
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> BAT Road, Ayivu Division,
+              Arua City
+            </p>
+          </div>
         </div>
         <div>
           <h2>Socials</h2>
           <div class="social-icons">
             <a
-              href="https://www.facebook.com/osditoinvestments"
+              href="https://www.facebook.com/people/Osdito-Investments-LTD/61574003487360/"
               target="_blank"
             >
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.twitter.com/osditoinvestments" target="_blank">
-              <i class="fab fa-x-twitter"></i>
+            <a href="https://x.com/Osditoltd" target="_blank">
+              <i class="fab fa-twitter"></i>
             </a>
             <a
-              href="https://www.instagram.com/osditoinvestments"
+              href="https://www.instagram.com/osditoinvestment/"
               target="_blank"
             >
               <i class="fab fa-instagram"></i>
@@ -408,7 +536,7 @@
           <a href="/">Home</a>
           <a href="/pages/about.html">About us</a>
           <a href="/pages/services.html">Services</a>
-          <!-- <a href="pages/projects.html">Projects</a> -->
+          <a href="/pages/projects.html">Projects</a>
           <a href="/pages/contact.html">Contact us</a>
         </div>
       </div>
@@ -435,6 +563,32 @@
         const mobileDropdown = document.querySelector(".mobile-dropdown");
         mobileDropdown.classList.toggle("active");
       }
+
+      function startCarousels() {
+        const carouselIds = [
+          "market-carousel",
+          "resource-carousel",
+          "playground-carousel",
+          "engineering-carousel",
+          "school-carousel"
+        ];
+
+        carouselIds.forEach((id) => {
+          const slides = document.querySelectorAll(`#${id} .carousel-slide`);
+          let currentSlide = 0;
+
+          setInterval(() => {
+            slides[currentSlide].classList.remove("active");
+
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            slides[currentSlide].classList.add("active");
+          }, 2000); // Change slide every 2 seconds
+        });
+      }
+
+      window.addEventListener("load", startCarousels);
     </script>
   </body>
 </html>
+
